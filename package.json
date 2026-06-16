@@ -1,0 +1,44 @@
+{
+  "name": "smartstudy-desktop",
+  "version": "1.0.0",
+  "main": "main.cjs",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.smartstudy.app",
+    "productName": "SmartStudy",
+    "win": {
+      "target": "nsis",
+      "icon": null
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "runAfterFinish": true
+    },
+    "files": [
+      "main.cjs",
+      "dist/**/*"
+    ]
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.0",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "autoprefixer": "^10.5.0",
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^4.3.0",
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "vue": "^3.4.0"
+  }
+}
